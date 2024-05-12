@@ -51,13 +51,12 @@ selected_skin_type = input("Enter a skin type from the list above: ")
 
 
 output = ""
-output = ""
-for animal in animals_data:
-    if "characteristics" in animal and "skin_type" in animal["characteristics"]:
-        if animal["characteristics"]["skin_type"] == selected_skin_type:
-            output += serialize_animal(animal)
-        elif "characteristics" not in animal:
-            output += serialize_animal(animal)
+for animal_data in animals_data:
+    if "characteristics" in animal_data and "skin_type" in animal_data["characteristics"]:
+        if animal_data["characteristics"]["skin_type"] == selected_skin_type:
+            output += serialize_animal(animal_data)
+        elif "characteristics" not in animal_data:
+            output += serialize_animal(animal_data)
 
 
 new_html_content = template_content.replace("__REPLACE_ANIMALS_INFO__", output)
