@@ -30,7 +30,8 @@ def fetch_data(animal_name):
     print(response)
     if response.status_code == requests.codes.ok:
         animal_data = response.json()
-        # filtered_animals = [animal for animal in animal_data if animal['name'] == animal_name]
+        # filtered_animals = [animal for animal in animal_data if
+        # animal['name'] == animal_name]
         # print(filtered_animals)
         return animal_data
     else:
